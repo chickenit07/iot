@@ -1,3 +1,5 @@
+// import {getAndSave} from "./src/services/MqttService";
+var {getAndSave} = require("./src/services/MqttService");
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -6,6 +8,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./src/routes/index');
 var usersRouter = require('./src/routes/users');
+var sensorRoute = require('./src/routes/sensors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const {config} = require('./src/helpers/configs');
@@ -46,6 +49,7 @@ app.use(logger('dev'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/sensors', sensorRoute);
 
 console.log(1);
 
@@ -64,5 +68,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+getAndSave();
 
 module.exports = app;
