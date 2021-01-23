@@ -1,17 +1,17 @@
-var express = require('express');
-var router = express.Router();
+// var express = require('express');
+// var router = express.Router();
 
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
+// /* GET home page. */
+// // router.get('/', function(req, res, next) {
+// //   res.render('index', { title: 'Express' });
+// //   console.log(1);
+// // });
+
+
+// router.get('/', (req, res, next) => {
 //   console.log(1);
+//   res.sendFile('iot/routes/wget-log.txt');
 // });
 
 
-router.get('/', (req, res, next) => {
-  console.log(1);
-  res.sendFile('/home/rogers/IOT-server/routes/wget-log.txt');
-});
-
-
-module.exports = router;
+// module.exports = router;
