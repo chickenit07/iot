@@ -10,7 +10,7 @@ var router = express.Router();
 
 router.get('/', (req, res, next) => {
   console.log(1);
-  res.sendFile(__dirname + '/wget-log.txt');
+  res.sendFile('wget-log.txt');
 });
 
 
